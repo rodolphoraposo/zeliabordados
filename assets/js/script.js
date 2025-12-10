@@ -3,7 +3,7 @@
  *************************************************/
 
 // Número de WhatsApp da Zélia Bordados
-const WHATSAPP_NUMBER = "5582991201916"; 
+const WHATSAPP_NUMBER = "5582994336126"; 
 // A chave PIX não se aplica ao link-tree principal, mantida apenas por referência
 const PIX_KEY = ""; 
 
