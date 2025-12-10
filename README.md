@@ -16,11 +16,11 @@ Em vez de depender de imagens desorganizadas e solicitações genéricas, este *
 
 O sistema é focado em transformar a paixão por bordados em um negócio online eficiente, priorizando a beleza da arte e a facilidade de contato.
 
-* **Galeria de Artes Responsiva:** Apresentação elegante e adaptável em *Grid* para exibir os modelos de bordados de fita em qualquer dispositivo.
-* **Orçamento Direto por Item:** O cliente clica no item desejado e gera uma **mensagem pré-formatada no WhatsApp** com o nome exato da peça, eliminando dúvidas e erros na comunicação.
-* **Navegação por Âncora Fixa (UX Aprimorada):** Permite rolar suavemente entre as categorias da Galeria (Toalhas, Panos de Prato, etc.), mesmo com o cabeçalho fixo, para uma experiência de usuário fluida.
-* **Link-in-Bio Otimizado:** Página inicial (Home) minimalista que concentra todos os links importantes (Galeria, WhatsApp, Instagram), ideal para uso em perfis de redes sociais.
-* **Design Artesanal e Elegante:** Uso de paleta de cores e tipografia que remetem à delicadeza do bordado de fita.
+- **Galeria de Artes Responsiva:** Apresentação elegante e adaptável em _Grid_ para exibir os modelos de bordados de fita em qualquer dispositivo.
+- **Orçamento Direto por Item:** O cliente clica no item desejado e gera uma **mensagem pré-formatada no WhatsApp** com o nome exato da peça, eliminando dúvidas e erros na comunicação.
+- **Navegação por Âncora Fixa (UX Aprimorada):** Permite rolar suavemente entre as categorias da Galeria (Toalhas, Panos de Prato, etc.), mesmo com o cabeçalho fixo, para uma experiência de usuário fluida.
+- **Link-in-Bio Otimizado:** Página inicial (Home) minimalista que concentra todos os links importantes (Galeria, WhatsApp, Instagram), ideal para uso em perfis de redes sociais.
+- **Design Artesanal e Elegante:** Uso de paleta de cores e tipografia que remetem à delicadeza do bordado de fita.
 
 ---
 
@@ -28,13 +28,12 @@ O sistema é focado em transformar a paixão por bordados em um negócio online 
 
 A arquitetura foi escolhida para garantir **máxima performance**, **baixo custo** e **destaque visual**, ideal para um portfólio de artesanato.
 
-| Decisão | Porquê |
-| :--- | :--- |
-| **Tecnologias Estáticas** (HTML5, CSS3, JS Puro) | **Performance:** Carregamento ultra-rápido (baixo *latency*), essencial para o primeiro contato do cliente. **Custo:** Hospedagem gratuita e simples. |
-| **\`scroll-margin-top\` no CSS** | **Experiência do Usuário (UX):** Resolve o problema comum de cabeçalhos fixos que escondem títulos de seção ao navegar por âncoras. |
-| **CSS Grid para a Galeria** | **Responsividade Avançada:** Garante que o layout da galeria se ajuste automaticamente para exibir os itens de forma otimizada, de desktops a celulares. |
-| **Integração Direta com WhatsApp** | **Foco na Conversão:** Utiliza o canal preferencial do público para fechar orçamentos de forma rápida e pessoal. |
-
+| Decisão                                          | Porquê                                                                                                                                                   |
+| :----------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Tecnologias Estáticas** (HTML5, CSS3, JS Puro) | **Performance:** Carregamento ultra-rápido (baixo _latency_), essencial para o primeiro contato do cliente. **Custo:** Hospedagem gratuita e simples.    |
+| **\`scroll-margin-top\` no CSS**                 | **Experiência do Usuário (UX):** Resolve o problema comum de cabeçalhos fixos que escondem títulos de seção ao navegar por âncoras.                      |
+| **CSS Grid para a Galeria**                      | **Responsividade Avançada:** Garante que o layout da galeria se ajuste automaticamente para exibir os itens de forma otimizada, de desktops a celulares. |
+| **Integração Direta com WhatsApp**               | **Foco na Conversão:** Utiliza o canal preferencial do público para fechar orçamentos de forma rápida e pessoal.                                         |
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -48,6 +47,7 @@ A arquitetura foi escolhida para garantir **máxima performance**, **baixo custo
 </p>
 
 ---
+
 ## ⚙️ GUIA DE EXECUÇÃO: Como Rodar e Acessar
 
 O projeto é estático e pode ser visualizado em qualquer navegador.
@@ -55,8 +55,8 @@ O projeto é estático e pode ser visualizado em qualquer navegador.
 ### 🌐 Acesso Rápido
 
 Acesse a versão final do projeto online:
-['https://zeliabordados.vercel.app/'] 
-*(Atualize este link com o endereço final da sua aplicação)*
+['https://zeliabordados.vercel.app/']
+_(Atualize este link com o endereço final da sua aplicação)_
 
 ### 👨‍💻 Configuração Local
 
@@ -74,22 +74,22 @@ Para executar e inspecionar o código-fonte:
     Abra o arquivo \`index.html\` ou \`assets/html/galeria.html\` diretamente em seu navegador.
 
 ---
+
 ## 🔥 GitHub Streak
 
 ### 📊 Estatísticas do GitHub
 
 <div align="center" style="display: flex; gap: 40px;">
 
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=rodolphoraposo&show_icons=true&theme=radical" alt="Estatísticas do GitHub"/>
+<img height="180em" src="https://github-readme-stats.vercel.app/api?username=rodolphoraposo&show_icons=true&theme=radical" alt="Estatísticas do GitHub"/>
 
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=rodolphoraposo&layout=compact&theme=radical" alt="Linguagens mais usadas"/>
+<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=rodolphoraposo&layout=compact&theme=radical" alt="Linguagens mais usadas"/>
 
 </div>
 
 ---
 
 ## 🙋‍♂️ Conecte-se comigo
-
 
 <p>
   <a href="https://www.linkedin.com/in/rodolphoraposo" target="_blank">
