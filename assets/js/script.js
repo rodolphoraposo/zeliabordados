@@ -27,3 +27,28 @@ const PIX_KEY = "";
 
 // ===== Auto-adicionar PROMO (REMOVIDO, POIS NÃO SE APLICA) =====
 // O sistema de promoções foi desativado/removido na arquitetura de bordados.
+
+document.addEventListener('DOMContentLoaded', () => {
+    const splashScreen = document.getElementById('splash-screen');
+    const mainContent = document.querySelector('.main-content');
+    
+    // Tempo que a logo ficará visível (2.5 segundos)
+    const splashDuration = 2500; 
+
+    setTimeout(() => {
+        // Inicia o fade-out (opacidade 0)
+        splashScreen.classList.add('fade-out');
+
+        splashScreen.addEventListener('transitionend', () => {
+            // Remove o display da tela de splash após a transição
+            splashScreen.style.display = 'none';
+        }, { once: true });
+        
+        // Garante que o conteúdo principal apareça (opacidade 1)
+        // O pequeno atraso (550ms) garante que o main-content comece a aparecer 
+        // um pouco depois que a tela de splash começa a sumir.
+        setTimeout(() => {
+            mainContent.classList.add('loaded');
+        }, 550); 
+    }, splashDuration);
+});
