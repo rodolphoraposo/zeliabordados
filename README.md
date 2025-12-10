@@ -80,9 +80,9 @@ Para executar e inspecionar o código-fonte:
 
 <div align="center" style="display: flex; gap: 40px;">
 
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=raposoofc&show_icons=true&theme=radical" alt="Estatísticas do GitHub"/>
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=rodolphoraposo&show_icons=true&theme=radical" alt="Estatísticas do GitHub"/>
 
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=raposoofc&layout=compact&theme=radical" alt="Linguagens mais usadas"/>
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=rodolphoraposo&layout=compact&theme=radical" alt="Linguagens mais usadas"/>
 
 </div>
 
@@ -90,22 +90,21 @@ Para executar e inspecionar o código-fonte:
 
 ## 🙋‍♂️ Conecte-se comigo
 
-<div align="center">
-    <p>
-      <a href="https://www.linkedin.com/in/raposoofc" target="_blank">
-        <img src="https://skillicons.dev/icons?i=linkedin" height="40" alt="LinkedIn logo"/>
-      </a>&nbsp;
-      
-      <a href="mailto:raposotiweb@gmail.com" target="_blank">
-        <img src="https://skillicons.dev/icons?i=gmail" height="40" alt="Gmail logo"/>
-      </a>&nbsp;
-      
-      <a href="https://www.instagram.com/raposoofc.87" target="_blank">
-        <img src="https://skillicons.dev/icons?i=instagram" height="40" alt="Instagram logo"/>
-      </a>&nbsp;
-      
-      <a href="https://github.com/raposoofc" target="_blank">
-        <img src="https://skillicons.dev/icons?i=github" height="40" alt="GitHub logo"/>
-      </a>&nbsp;
-    </p>
-</div>
+
+<p>
+  <a href="https://www.linkedin.com/in/rodolphoraposo" target="_blank">
+    <img src="https://skillicons.dev/icons?i=linkedin" height="50" alt="LinkedIn logo"/>
+  </a>&nbsp;
+  
+  <a href="mailto:raposotiweb@gmail.com" target="_blank">
+    <img src="https://skillicons.dev/icons?i=gmail" height="50" alt="Gmail logo"/>
+  </a>&nbsp;
+  
+  <a href="https://www.instagram.com/rodolphoraposo" target="_blank">
+    <img src="https://skillicons.dev/icons?i=instagram" height="50" alt="Instagram logo"/>
+  </a>&nbsp;
+  
+  <a href="https://github.com/rodolphoraposo" target="_blank">
+    <img src="https://skillicons.dev/icons?i=github" height="50" alt="GitHub logo"/>
+  </a>&nbsp;
+</p>
