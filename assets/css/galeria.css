@@ -1,43 +1,48 @@
-/* Paleta de cores para Zélia Bordados (Galeria) */
+/* ============================================================
+   PALETA DE CORES E VARIÁVEIS - ZÉLIA BORDADOS
+   ============================================================ */
 :root {
-  --bg: #F8F4E3;
-  --card: #FFF;
-  --muted: #5D4037;
-  --text: #3E2723;
-  --acc: #9CCC65;
-  --line: #F48FB1;
+  --bg: #F8F4E3;           /* Marfim Suave */
+  --card: #FFFFFF;        /* Fundo dos Cards */
+  --muted: #5D4037;       /* Marrom Rústico */
+  --text: #3E2723;        /* Marrom Café */
+  --acc: #9CCC65;         /* Verde Folha (Destaque) */
+  --line: #F48FB1;        /* Rosa Chá (Linhas/Bordas) */
   --primary-btn: #9CCC65;
   --secondary-btn: #F48FB1;
+  --whatsapp: #25D366;    /* Cor Padrão WhatsApp */
+  --shadow: rgba(0, 0, 0, 0.1);
 }
 
+/* ============================================================
+   RESET E CONFIGURAÇÕES GERAIS
+   ============================================================ */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-html,
 body {
-  min-height: 100%;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-body {
-  margin: 0;
-  font: 16px/1.4 'Merriweather', serif;
+  font-family: 'Merriweather', serif;
   background: var(--bg);
   color: var(--text);
+  line-height: 1.4;
+  min-height: 100vh;
 }
 
+/* Bloqueio de scroll quando o modal/lightbox estiver aberto */
 body.lock-scroll {
-  height: 100%;
   overflow: hidden;
 }
 
-/* Estilo da barra superior (topbar) */
+/* ============================================================
+   BARRA SUPERIOR (TOPBAR)
+   ============================================================ */
 .topbar.glass {
   position: fixed;
   top: 0;
@@ -51,7 +56,7 @@ body.lock-scroll {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px var(--shadow);
   border-bottom: 1px solid var(--line);
 }
 
@@ -61,17 +66,14 @@ body.lock-scroll {
   gap: 15px;
 }
 
-.brand .logo a {
-  display: flex;
-}
-
 .brand .logo img {
   height: 40px;
   width: 40px;
   border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--line);
 }
 
-/* Navegação Principal (Links da Galeria) */
 .main-nav {
   display: flex;
   gap: 15px;
@@ -82,16 +84,15 @@ body.lock-scroll {
   color: var(--muted);
   display: flex;
   align-items: center;
-  gap: 5px;
-  padding: 8px 10px;
+  gap: 8px;
+  padding: 8px 12px;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.95rem;
   border-radius: 8px;
   transition: all 0.3s ease;
 }
 
 .main-nav .nav-link i {
-  font-size: 1.1em;
   color: var(--acc);
 }
 
@@ -101,86 +102,89 @@ body.lock-scroll {
   background: rgba(156, 204, 101, 0.1);
 }
 
-.main-nav .nav-link.active i {
-  color: var(--primary-btn);
-}
-
-/* Botão de Orçamento Fixo */
+/* Botão do Carrinho no Header */
 .btn-orcamento {
-    background: var(--primary-btn);
-    color: var(--text);
-    padding: 8px 15px;
-    font-weight: 700;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: background 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    border: none;
-    cursor: pointer;
+  background: var(--primary-btn);
+  color: var(--text);
+  padding: 10px 18px;
+  font-weight: 700;
+  border-radius: 25px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+  box-shadow: 0 4px 10px var(--shadow);
 }
 
 .btn-orcamento:hover {
-    background: #AEEA00;
+  background: #AEEA00;
+  transform: scale(1.05);
 }
 
+#cart-count {
+  background: #fff;
+  color: var(--secondary-btn);
+  padding: 2px 7px;
+  border-radius: 50%;
+  font-size: 0.85rem;
+  font-weight: 900;
+}
+
+/* ============================================================
+   CONTEÚDO PRINCIPAL (GRID E CARDS)
+   ============================================================ */
 .container {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 100px 20px 50px 20px;
 }
 
 .section {
-  scroll-margin-top: 90px;
-  margin-top: 30px;
+  scroll-margin-top: 100px;
+  margin-top: 40px;
 }
 
-/* Títulos de Seção */
 .section-title {
   font-size: 1.8rem;
   font-weight: 700;
   color: var(--text);
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   border-bottom: 2px solid var(--line);
-  padding-bottom: 5px;
+  padding-bottom: 8px;
 }
 
-.section-title i {
-    color: var(--primary-btn);
-}
-
-
-/* Grid e Cards de Produto/Arte */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
+  gap: 30px;
 }
 
 .card {
   background: var(--card);
-  border-radius: 12px;
+  border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px var(--shadow);
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid var(--line);
+  transition: transform 0.3s ease;
+  border: 1px solid rgba(244, 143, 177, 0.3);
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-8px);
 }
 
 .card-media {
   position: relative;
   width: 100%;
-  padding-top: 75%;
+  padding-top: 80%;
+  overflow: hidden;
 }
 
 .card-media img {
@@ -190,135 +194,325 @@ body.lock-scroll {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  cursor: zoom-in; /* Indica que a imagem pode ser ampliada */
+  transition: transform 0.5s ease;
+}
+
+.card-media img:hover {
+  transform: scale(1.1);
 }
 
 .card-content {
-  padding: 15px;
+  padding: 18px;
   flex-grow: 1;
 }
 
 .card-content h3 {
-  font-size: 1.2rem;
-  margin-top: 0;
-  margin-bottom: 5px;
+  font-size: 1.25rem;
+  margin-bottom: 8px;
   color: var(--text);
 }
 
 .card-content p {
   font-size: 0.95rem;
   color: var(--muted);
+  margin-bottom: 12px;
 }
 
+.price-tag {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 5px;
+}
+
+/* ============================================================
+   CONTROLES DE QUANTIDADE E AÇÕES DO CARD
+   ============================================================ */
 .card-actions {
-  padding: 15px;
+  padding: 18px;
   border-top: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: 12px;
 }
 
-/* Botão de Orçamento por Item */
-.btn-orcamento-item {
+.qty-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  background: #F1F1F1;
+  padding: 6px;
+  border-radius: 30px;
+}
+
+.qty-btn {
+  background: var(--acc);
+  border: none;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: background 0.2s;
+}
+
+.qty-btn:hover {
+  background: #8BC34A;
+}
+
+.qty-num {
+  font-weight: 700;
+  min-width: 25px;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.btn-add-cart {
   background: var(--secondary-btn);
   color: white;
-  padding: 10px 15px;
   border: none;
-  border-radius: 6px;
+  padding: 12px;
+  border-radius: 10px;
   font-weight: 700;
   cursor: pointer;
-  transition: background 0.3s ease;
+  font-size: 1rem;
+  transition: 0.3s;
 }
 
-.btn-orcamento-item:hover {
-    background: #EC407A;
+.btn-add-cart:hover {
+  background: #EC407A;
+  box-shadow: 0 4px 12px rgba(244, 143, 177, 0.4);
 }
 
-/* Rodapé */
+/* ============================================================
+   LIGHTBOX (AMPLIAR IMAGEM)
+   ============================================================ */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+}
+
+.lightbox-content {
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 5px;
+  border: 4px solid #fff;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.close-lightbox {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+/* ============================================================
+   MODAL DE CHECKOUT (ESTILO FORNO A LENHA)
+   ============================================================ */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  padding: 20px;
+}
+
+.modal-box {
+  background: var(--bg);
+  width: 100%;
+  max-width: 480px;
+  border-radius: 20px;
+  padding: 25px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--line);
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+}
+
+.modal-header h2 {
+  font-size: 1.4rem;
+  color: var(--text);
+}
+
+#close-modal {
+  font-size: 2.2rem;
+  cursor: pointer;
+  color: var(--muted);
+  line-height: 1;
+}
+
+/* Lista de Itens no Carrinho */
+.pedido-lista {
+  margin-bottom: 20px;
+  max-height: 200px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+.item-linha {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--line);
+  font-size: 0.95rem;
+}
+
+.item-linha i {
+  margin-left: 10px;
+  transition: color 0.2s;
+}
+
+.pedido-total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 800;
+  font-size: 1.3rem;
+  margin: 15px 0 25px 0;
+  color: var(--text);
+  background: rgba(156, 204, 101, 0.1);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* Formulário de Finalização */
+.input-group {
+  margin-bottom: 18px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 1rem;
+  background: #fff;
+}
+
+.input-group input:focus {
+  outline: 2px solid var(--acc);
+  border-color: transparent;
+}
+
+.btn-enviar-pedido {
+  width: 100%;
+  background: var(--whatsapp);
+  color: white;
+  border: none;
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+.btn-enviar-pedido:hover {
+  background: #1eb954;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+}
+
+/* ============================================================
+   RODAPÉ E RESPONSIVIDADE
+   ============================================================ */
 footer {
   text-align: center;
-  padding: 20px 0;
-  margin-top: 30px;
+  padding: 30px 20px;
   border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 footer small {
-    color: var(--muted);
-    font-size: 0.85rem;
+  color: var(--muted);
+  font-size: 0.85rem;
 }
 
 footer a {
-    color: var(--muted);
-    text-decoration: none;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
 }
 
-/* Responsividade Geral para Tablets e Celulares */
+/* Mobile Adaptive */
 @media (max-width: 768px) {
-  .topbar {
-    padding: 10px 8px;
+  .topbar.glass {
+    padding: 10px;
   }
 
-  .brand {
-    gap: 10px;
-  }
-
-  .main-nav {
-    flex-grow: 0; 
-    justify-content: flex-start;
-    gap: 5px;
-  }
-
-  /* Oculta o texto dos links de navegação a partir de 768px */
   .main-nav .nav-link span {
-    display: none;
-  }
-  
-  .main-nav .nav-link {
-    padding: 6px 4px;
-    font-size: 1.5rem; /* Ícone menor */
-    /* Garante que os links voltem a ser linha e não coluna */
-    flex-direction: row; 
-    align-items: center;
-    gap: 0;
+    display: none; /* Deixa apenas ícones no mobile para caber tudo */
   }
 
-  .card {
-    width: auto;
-    margin: 0;
+  .main-nav .nav-link {
+    font-size: 1.4rem;
+    padding: 8px;
+  }
+
+  .container {
+    padding-top: 90px;
   }
 
   .grid {
     grid-template-columns: 1fr;
   }
 
-  .container {
-    padding-top: 100px;
-  }
-
-  .sction {
-    scroll-margin-top: 100px;
+  .modal-box {
+    width: 95%;
+    padding: 20px;
   }
 }
 
-/* OTIMIZAÇÃO MÁXIMA PARA TELAS MUITO PEQUENAS (<= 350px) */
 @media (max-width: 350px) {
-    /* 1. Minimiza o padding lateral da barra superior */
-    .topbar.glass {
-        padding: 12px 5px;
-    }
-
-    /* 2. Oculta a logo do site para liberar espaço máximo */
-    .brand .logo {
-        display: none;
-    }
-
-    /* 3. Oculta o texto do botão 'Orçamento' */
-    .btn-orcamento span {
-        display: none;
-    }
-
-    /* 4. Reduz o padding do botão para transformá-lo em um ícone compacto */
-    .btn-orcamento {
-        padding: 8px; 
-        gap: 0;
-        flex-shrink: 0; /* IMPEDE O ENCOLHIMENTO */
-    }
+  .brand .logo {
+    display: none;
+  }
+  
+  .btn-orcamento .cart-label {
+    display: none;
+  }
 }

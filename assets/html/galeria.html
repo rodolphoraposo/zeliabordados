@@ -1,334 +1,319 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="author"
-      content="Rapôso Web Dev - https://portfolioraposoofc.vercel.app/"
-    />
-    <meta
-      name="description"
-      content="Galeria de Artes em Bordados de Fita | Zélia Bordados"
-    />
-    <title>Galeria | Zélia Bordados</title>
-    <link rel="stylesheet" href="../css/galeria.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link rel="icon" href="../icon/logozelia-ico.ico" type="image/x-icon" />
-  </head>
 
-  <body>
-    <header class="topbar glass" id="site-header">
-      <div class="brand">
-        <div class="logo">
-          <a href="../../index.html">
-            <img
-              id="icone"
-              src="../imgs/logozelia-transparente.png"
-              alt="Ícone da logo de Zélia Bordados."
-            />
-          </a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Rapôso Web Dev - https://portfolioraposoofc.vercel.app/" />
+  <meta name="description" content="Galeria de Artes em Bordados de Fita | Zélia Bordados" />
+  <title>Galeria | Zélia Bordados</title>
+  <link rel="stylesheet" href="../css/galeria.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="icon" href="../icon/logozelia-ico.ico" type="image/x-icon" />
+</head>
+
+<body>
+  <header class="topbar glass" id="site-header">
+    <div class="brand">
+      <div class="logo">
+        <a href="../../index.html">
+          <img id="icone" src="../imgs/logozelia-transparente.png" alt="Ícone da logo de Zélia Bordados." />
+        </a>
+      </div>
+      <nav class="main-nav">
+        <a href="#secao-roupas" class="nav-link" data-target="roupas" title="Roupas">
+          <i class="fa-solid fa-bath"></i><span>Toalhas de Banho e Rosto</span>
+        </a>
+      </nav>
+    </div>
+
+    <button class="btn btn-primary btn-orcamento" id="btn-abrir-carrinho">
+      <i class="fa-solid fa-cart-shopping"></i> 
+      <span id="cart-count">0</span>
+      <span class="cart-label">Itens</span>
+    </button>
+  </header>
+
+  <main class="container">
+    <section class="section" id="secao-roupas">
+      <h2 class="section-title">
+        <i class="fa-solid fa-bath"></i> Toalhas de Banho e Rosto
+      </h2>
+      <div class="grid" id="grid-roupas">
+        
+        <div class="card" data-id="1" data-name="Toalha - modelo 1" data-price="45.00">
+          <div class="card-media">
+            <img src="../imgs/products/modelo1.jpeg" alt="Toalha modelo 1" loading="lazy" class="img-expand" title="Clique para ampliar" />
+          </div>
+          <div class="card-content">
+            <h3>Toalha - modelo 1</h3>
+            <p>Toalha de banho e rosto.</p>
+            <span class="price-tag">R$ 45,00</span>
+          </div>
+          <div class="card-actions">
+            <div class="qty-selector">
+                <button class="qty-btn dec">-</button>
+                <span class="qty-num">1</span>
+                <button class="qty-btn inc">+</button>
+            </div>
+            <button class="btn btn-secondary btn-add-cart">
+              Adicionar ao Carrinho
+            </button>
+          </div>
         </div>
-        <nav class="main-nav">
-          <a
-            href="#secao-acessorios"
-            class="nav-link"
-            data-target="acessorios"
-            title="Acessórios"
-          >
-            <i class="fa-solid fa-ring"></i><span>Acessórios</span>
-          </a>
-          <a
-            href="#secao-roupas"
-            class="nav-link"
-            data-target="roupas"
-            title="Roupas"
-          >
-            <i class="fa-solid fa-shirt"></i><span>Vestuário</span>
-          </a>
-          <a
-            href="#secao-decoracao"
-            class="nav-link"
-            data-target="decoracao"
-            title="Decoração"
-          >
-            <i class="fa-solid fa-house-chimney"></i><span>Decoração</span>
-          </a>
-        </nav>
+
+        <div class="card" data-id="2" data-name="Toalha - modelo 2" data-price="55.00">
+          <div class="card-media">
+            <img src="../imgs/products/modelo2.jpeg" alt="Toalha modelo 2" loading="lazy" class="img-expand" title="Clique para ampliar" />
+          </div>
+          <div class="card-content">
+            <h3>Toalha - modelo 2</h3>
+            <p>Toalha de banho e rosto.</p>
+            <span class="price-tag">R$ 55,00</span>
+          </div>
+          <div class="card-actions">
+            <div class="qty-selector">
+                <button class="qty-btn dec">-</button>
+                <span class="qty-num">1</span>
+                <button class="qty-btn inc">+</button>
+            </div>
+            <button class="btn btn-secondary btn-add-cart">
+              Adicionar ao Carrinho
+            </button>
+          </div>
+        </div>
+        <div class="card" data-id="3" data-name="Toalha - modelo 3" data-price="45.00">
+          <div class="card-media">
+            <img src="../imgs/products/modelo3.jpeg" alt="Toalha modelo 3" loading="lazy" class="img-expand" title="Clique para ampliar" />
+          </div>
+          <div class="card-content">
+            <h3>Toalha - modelo 3</h3>
+            <p>Toalha de banho e rosto.</p>
+            <span class="price-tag">R$ 45,00</span>
+          </div>
+          <div class="card-actions">
+            <div class="qty-selector">
+                <button class="qty-btn dec">-</button>
+                <span class="qty-num">1</span>
+                <button class="qty-btn inc">+</button>
+            </div>
+            <button class="btn btn-secondary btn-add-cart">
+              Adicionar ao Carrinho
+            </button>
+          </div>
+        </div>
+
+        <div class="card" data-id="4" data-name="Toalha - modelo 4" data-price="55.00">
+          <div class="card-media">
+            <img src="../imgs/products/modelo4.jpeg" alt="Toalha modelo 4" loading="lazy" class="img-expand" title="Clique para ampliar" />
+          </div>
+          <div class="card-content">
+            <h3>Toalha - modelo 4</h3>
+            <p>Toalha de banho e rosto.</p>
+            <span class="price-tag">R$ 55,00</span>
+          </div>
+          <div class="card-actions">
+            <div class="qty-selector">
+                <button class="qty-btn dec">-</button>
+                <span class="qty-num">1</span>
+                <button class="qty-btn inc">+</button>
+            </div>
+            <button class="btn btn-secondary btn-add-cart">
+              Adicionar ao Carrinho
+            </button>
+          </div>
+        </div>
+        <div class="card" data-id="5" data-name="Toalha - modelo 5" data-price="45.00">
+          <div class="card-media">
+            <img src="../imgs/products/modelo5.jpeg" alt="Toalha modelo 5" loading="lazy" class="img-expand" title="Clique para ampliar" />
+          </div>
+          <div class="card-content">
+            <h3>Toalha - modelo 5</h3>
+            <p>Toalha de banho e rosto.</p>
+            <span class="price-tag">R$ 45,00</span>
+          </div>
+          <div class="card-actions">
+            <div class="qty-selector">
+                <button class="qty-btn dec">-</button>
+                <span class="qty-num">1</span>
+                <button class="qty-btn inc">+</button>
+            </div>
+            <button class="btn btn-secondary btn-add-cart">
+              Adicionar ao Carrinho
+            </button>
+          </div>
+        </div>
+
+        <div class="card" data-id="6" data-name="Toalha - modelo 6" data-price="55.00">
+          <div class="card-media">
+            <img src="../imgs/products/modelo6.jpeg" alt="Toalha modelo 6" loading="lazy" class="img-expand" title="Clique para ampliar" />
+          </div>
+          <div class="card-content">
+            <h3>Toalha - modelo 6</h3>
+            <p>Toalha de banho e rosto.</p>
+            <span class="price-tag">R$ 55,00</span>
+          </div>
+          <div class="card-actions">
+            <div class="qty-selector">
+                <button class="qty-btn dec">-</button>
+                <span class="qty-num">1</span>
+                <button class="qty-btn inc">+</button>
+            </div>
+            <button class="btn btn-secondary btn-add-cart">
+              Adicionar ao Carrinho
+            </button>
+          </div>
+        </div>
+        <div class="card" data-id="7" data-name="Toalha - modelo 7" data-price="45.00">
+          <div class="card-media">
+            <img src="../imgs/products/modelo7.jpeg" alt="Toalha modelo 7" loading="lazy" class="img-expand" title="Clique para ampliar" />
+          </div>
+          <div class="card-content">
+            <h3>Toalha - modelo 7</h3>
+            <p>Toalha de banho e rosto.</p>
+            <span class="price-tag">R$ 45,00</span>
+          </div>
+          <div class="card-actions">
+            <div class="qty-selector">
+                <button class="qty-btn dec">-</button>
+                <span class="qty-num">1</span>
+                <button class="qty-btn inc">+</button>
+            </div>
+            <button class="btn btn-secondary btn-add-cart">
+              Adicionar ao Carrinho
+            </button>
+          </div>
+        </div>
+
+        <div class="card" data-id="8" data-name="Toalha - modelo 8" data-price="55.00">
+          <div class="card-media">
+            <img src="../imgs/products/modelo8.jpeg" alt="Toalha modelo 8" loading="lazy" class="img-expand" title="Clique para ampliar" />
+          </div>
+          <div class="card-content">
+            <h3>Toalha - modelo 8</h3>
+            <p>Toalha de banho e rosto.</p>
+            <span class="price-tag">R$ 55,00</span>
+          </div>
+          <div class="card-actions">
+            <div class="qty-selector">
+                <button class="qty-btn dec">-</button>
+                <span class="qty-num">1</span>
+                <button class="qty-btn inc">+</button>
+            </div>
+            <button class="btn btn-secondary btn-add-cart">
+              Adicionar ao Carrinho
+            </button>
+          </div>
+        </div>
+        <div class="card" data-id="9" data-name="Toalha - modelo 9" data-price="45.00">
+          <div class="card-media">
+            <img src="../imgs/products/modelo9.jpeg" alt="Toalha modelo 9" loading="lazy" class="img-expand" title="Clique para ampliar" />
+          </div>
+          <div class="card-content">
+            <h3>Toalha - modelo 9</h3>
+            <p>Toalha de banho e rosto.</p>
+            <span class="price-tag">R$ 45,00</span>
+          </div>
+          <div class="card-actions">
+            <div class="qty-selector">
+                <button class="qty-btn dec">-</button>
+                <span class="qty-num">1</span>
+                <button class="qty-btn inc">+</button>
+            </div>
+            <button class="btn btn-secondary btn-add-cart">
+              Adicionar ao Carrinho
+            </button>
+          </div>
+        </div>
+
+        <div class="card" data-id="10" data-name="Toalha - modelo 10" data-price="55.00">
+          <div class="card-media">
+            <img src="../imgs/products/modelo10.jpeg" alt="Toalha modelo 10" loading="lazy" class="img-expand" title="Clique para ampliar" />
+          </div>
+          <div class="card-content">
+            <h3>Toalha - modelo 10</h3>
+            <p>Toalha de banho e rosto.</p>
+            <span class="price-tag">R$ 55,00</span>
+          </div>
+          <div class="card-actions">
+            <div class="qty-selector">
+                <button class="qty-btn dec">-</button>
+                <span class="qty-num">1</span>
+                <button class="qty-btn inc">+</button>
+            </div>
+            <button class="btn btn-secondary btn-add-cart">
+              Adicionar ao Carrinho
+            </button>
+          </div>
+        </div>
+
+        </div>
+    </section>
+  </main>
+
+  <div id="lightbox" class="lightbox">
+    <span class="close-lightbox">&times;</span>
+    <img class="lightbox-content" id="img-ampliada">
+    <div id="caption"></div>
+  </div>
+
+  <div id="modal-checkout" class="modal-overlay">
+    <div class="modal-box">
+      <header class="modal-header">
+        <h2>Seu Carrinho</h2>
+        <button id="close-modal">&times;</button>
+      </header>
+
+      <div id="lista-pedido" class="pedido-lista">
+        </div>
+
+      <div class="pedido-total">
+        <span>Total:</span>
+        <span id="valor-total">R$ 0,00</span>
       </div>
 
-      <a
-        href="https://wa.me/5582994336126?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20do(s)%20item(ns)%20que%20vi%20na%20Galeria."
-        target="_blank"
-        title="Fazer Orçamento no WhatsApp"
-        class="btn btn-primary btn-orcamento"
-      >
-        <i class="fa-brands fa-whatsapp"></i> Orçamento
-      </a>
-    </header>
-
-    <main class="container">
-      <section class="section" id="secao-acessorios">
-        <h2 class="section-title">
-          <i class="fa-solid fa-ring"></i> Acessórios Personalizados
-        </h2>
-        <div class="grid" id="grid-acessorios">
-          <div class="card">
-            <div class="card-media">
-              <img
-                src="../imgs/products/modelo3.jpeg"
-                alt="Tiara com bordado de fita"
-                loading="lazy"
-              />
-            </div>
-            <div class="card-content">
-              <h3>Tiara Floral de Fita</h3>
-              <p>Bordado delicado em cetim, ideal para casamentos e festas.</p>
-            </div>
-            <div class="card-actions">
-              <button
-                class="btn btn-secondary btn-orcamento-item"
-                data-item="Tiara Floral de Fita"
-              >
-                Solicitar Orçamento
-              </button>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-media">
-              <img
-                src="../imgs/products/modelo4.jpeg"
-                alt="Bolsa de mão bordada"
-                loading="lazy"
-              />
-            </div>
-            <div class="card-content">
-              <h3>Clutch Bordada à Mão</h3>
-              <p>
-                Elegância e exclusividade para compor seu look em ocasiões
-                especiais.
-              </p>
-            </div>
-            <div class="card-actions">
-              <button
-                class="btn btn-secondary btn-orcamento-item"
-                data-item="Clutch Bordada à Mão"
-              >
-                Solicitar Orçamento
-              </button>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-media">
-              <img
-                src="../imgs/products/modelo2.jpeg"
-                alt="Bolsa de mão bordada"
-                loading="lazy"
-              />
-            </div>
-            <div class="card-content">
-              <h3>Clutch Bordada à Mão</h3>
-              <p>
-                Elegância e exclusividade para compor seu look em ocasiões
-                especiais.
-              </p>
-            </div>
-            <div class="card-actions">
-              <button
-                class="btn btn-secondary btn-orcamento-item"
-                data-item="Clutch Bordada à Mão"
-              >
-                Solicitar Orçamento
-              </button>
-            </div>
-          </div>
+      <form id="checkout-form">
+        <div class="input-group">
+          <label><i class="fa-solid fa-user"></i> Nome Completo:</label>
+          <input type="text" id="cust-nome" required placeholder="Seu nome">
         </div>
-      </section>
 
-      <section class="section" id="secao-roupas">
-        <h2 class="section-title">
-          <i class="fa-solid fa-shirt"></i> Apliques em Vestuário
-        </h2>
-        <div class="grid" id="grid-roupas">
-          <div class="card">
-            <div class="card-media">
-              <img
-                src="../imgs/products/modelo1.jpeg"
-                alt="Detalhe de vestido com bordado de fita"
-                loading="lazy"
-              />
-            </div>
-            <div class="card-content">
-              <h3>Aplique de Flores em Vestido</h3>
-              <p>
-                Bordado em fita no busto ou barra, sob medida e sob encomenda.
-              </p>
-            </div>
-            <div class="card-actions">
-              <button
-                class="btn btn-secondary btn-orcamento-item"
-                data-item="Aplique de Flores em Vestido"
-              >
-                Solicitar Orçamento
-              </button>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-media">
-              <img
-                src="../imgs/products/modelo2.jpeg"
-                alt="Detalhe de vestido com bordado de fita"
-                loading="lazy"
-              />
-            </div>
-            <div class="card-content">
-              <h3>Aplique de Flores em Vestido</h3>
-              <p>
-                Bordado em fita no busto ou barra, sob medida e sob encomenda.
-              </p>
-            </div>
-            <div class="card-actions">
-              <button
-                class="btn btn-secondary btn-orcamento-item"
-                data-item="Aplique de Flores em Vestido"
-              >
-                Solicitar Orçamento
-              </button>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-media">
-              <img
-                src="../imgs/products/modelo3.jpeg"
-                alt="Detalhe de vestido com bordado de fita"
-                loading="lazy"
-              />
-            </div>
-            <div class="card-content">
-              <h3>Aplique de Flores em Vestido</h3>
-              <p>
-                Bordado em fita no busto ou barra, sob medida e sob encomenda.
-              </p>
-            </div>
-            <div class="card-actions">
-              <button
-                class="btn btn-secondary btn-orcamento-item"
-                data-item="Aplique de Flores em Vestido"
-              >
-                Solicitar Orçamento
-              </button>
-            </div>
-          </div>
+        <div class="input-group">
+          <label><i class="fa-solid fa-truck"></i> Forma de Entrega:</label>
+          <select id="cust-entrega" required>
+            <option value="Retirada">Retirada (Maceió - Gratuito)</option>
+            <option value="Entrega">Entrega via Motoboy/Correios</option>
+          </select>
         </div>
-      </section>
 
-      <section class="section" id="secao-decoracao">
-        <h2 class="section-title">
-          <i class="fa-solid fa-house-chimney"></i>Decoração
-        </h2>
-        <div class="grid" id="grid-decoracao">
-          <div class="card">
-            <div class="card-media">
-              <img
-                src="../imgs/products/modelo1.jpeg"
-                alt="Toalha modelo 1"
-                loading="lazy"
-              />
-            </div>
-            <div class="card-content">
-              <h3>Toalha - modelo 1</h3>
-              <p>Toalha de banho e rosto.</p>
-            </div>
-            <div class="card-actions">
-              <button
-                class="btn btn-secondary btn-orcamento-item"
-                data-item="Toalha - modelo 1"
-              >
-                Solicitar Orçamento
-              </button>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-media">
-              <img
-                src="../imgs/products/modelo2.jpeg"
-                alt="Toalha modelo 2"
-                loading="lazy"
-              />
-            </div>
-            <div class="card-content">
-              <h3>Toalha - modelo 2</h3>
-              <p>Toalha de banho e rosto.</p>
-            </div>
-            <div class="card-actions">
-              <button
-                class="btn btn-secondary btn-orcamento-item"
-                data-item="Toalha - modelo 2"
-              >
-                Solicitar Orçamento
-              </button>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-media">
-              <img
-                src="../imgs/products/modelo3.jpeg"
-                alt="Toalha modelo 3"
-                loading="lazy"
-              />
-            </div>
-            <div class="card-content">
-              <h3>Toalha - modelo 3</h3>
-              <p>Toalha de banho e rosto.</p>
-            </div>
-            <div class="card-actions">
-              <button
-                class="btn btn-secondary btn-orcamento-item"
-                data-item="Toalha - modelo 3"
-              >
-                Solicitar Orçamento
-              </button>
-            </div>
-          </div>
-          <!-- <div class="card">
-            <div class="card-media">
-              <img
-                src="../imgs/products/modelo4.jpeg"
-                alt="Toalha modelo 4"
-                loading="lazy"
-              />
-            </div>
-            <div class="card-content">
-              <h3>Toalha - modelo 4</h3>
-              <p>Toalha de banho e rosto.</p>
-            </div>
-            <div class="card-actions">
-              <button
-                class="btn btn-secondary btn-orcamento-item"
-                data-item="Toalha - modelo 4"
-              >
-                Solicitar Orçamento
-              </button>
-            </div>
-          </div> -->
+        <div id="group-endereco" class="input-group" style="display:none;">
+          <label><i class="fa-solid fa-location-dot"></i> Endereço:</label>
+          <input type="text" id="cust-endereco" placeholder="Rua, Número, Bairro">
         </div>
-      </section>
-    </main>
 
-    <footer>
-      <small
-        >&copy; 2025 -
-        <a href="https://rodolphoraposo.vercel.app/" target="_blank">
-Todos os direitos reservados a Rapôso Web Dev</a
-        ></small
-      >
-    </footer>
+        <div class="input-group">
+          <label><i class="fa-solid fa-credit-card"></i> Pagamento:</label>
+          <select id="cust-pagamento" required>
+            <option value="Pix">Pix</option>
+            <option value="Cartão de Crédito">Cartão de Crédito</option>
+            <option value="Dinheiro">Dinheiro</option>
+          </select>
+        </div>
 
-    <script src="../js/script.js"></script>
-    <script src="../js/galeria-logic.js"></script>
-  </body>
+        <button type="submit" class="btn-enviar-pedido">
+          <i class="fa-brands fa-whatsapp"></i> Finalizar Pedido no WhatsApp
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <small>&copy; 2025 -
+      <a href="https://rodolphoraposo.vercel.app/" target="_blank">
+        Todos os direitos reservados a Rapôso Web Dev</a></small>
+  </footer>
+
+  <script src="../js/script.js"></script>
+  <script src="../js/galeria-logic.js"></script>
+</body>
 </html>
