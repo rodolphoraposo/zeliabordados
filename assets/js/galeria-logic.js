@@ -1,165 +1,134 @@
-/*************************************************
- * LÓGICA DA GALERIA - ZÉLIA BORDADOS
- * Inclui: Lightbox, Carrinho e Checkout WhatsApp
- *************************************************/
-
 (function initGaleriaLogic() {
   const WHATSAPP_NUMBER = "5582999362458";
   let carrinho = [];
 
-  // ===== 1. LIGHTBOX (Ampliar Fotos) =====
+  /* ===== LIGHTBOX ===== */
   function initLightbox() {
     const lightbox = document.getElementById("lightbox");
     const imgAmpliada = document.getElementById("img-ampliada");
     const closeBtn = document.querySelector(".close-lightbox");
 
     document.querySelectorAll(".img-expand").forEach(img => {
-      img.onclick = function() {
+      img.onclick = () => {
         lightbox.style.display = "flex";
-        imgAmpliada.src = this.src;
-        document.body.style.overflow = "hidden"; // Trava scroll
-      }
+        imgAmpliada.src = img.src;
+        document.body.classList.add("modal-open");
+      };
     });
 
     closeBtn.onclick = () => {
       lightbox.style.display = "none";
-      document.body.style.overflow = "auto";
+      document.body.classList.remove("modal-open");
     };
 
-    lightbox.onclick = (e) => {
+    lightbox.onclick = e => {
       if (e.target === lightbox) closeBtn.onclick();
     };
   }
 
-  // ===== 2. CONTROLE DE QUANTIDADE NOS CARDS =====
+  /* ===== QUANTIDADE ===== */
   function initQuantityControls() {
     document.querySelectorAll('.card').forEach(card => {
-      const btnDec = card.querySelector('.dec');
-      const btnInc = card.querySelector('.inc');
-      const qtyNum = card.querySelector('.qty-num');
-      const btnAdd = card.querySelector('.btn-add-cart');
+      const dec = card.querySelector('.dec');
+      const inc = card.querySelector('.inc');
+      const num = card.querySelector('.qty-num');
 
-      btnDec.onclick = () => {
-        let val = parseInt(qtyNum.innerText);
-        if (val > 1) qtyNum.innerText = val - 1;
-      };
+      dec.onclick = () => num.textContent = Math.max(1, +num.textContent - 1);
+      inc.onclick = () => num.textContent = +num.textContent + 1;
 
-      btnInc.onclick = () => {
-        let val = parseInt(qtyNum.innerText);
-        qtyNum.innerText = val + 1;
-      };
-
-      btnAdd.onclick = () => {
-        const item = {
-          id: card.dataset.id,
-          nome: card.dataset.name,
-          preco: parseFloat(card.dataset.price),
-          qtd: parseInt(qtyNum.innerText)
-        };
-        adicionarAoCarrinho(item);
-        qtyNum.innerText = "1"; // Reseta após add
+      card.querySelector('.btn-add-cart').onclick = () => {
+        addToCart(
+          card.dataset.id,
+          card.dataset.name,
+          +card.dataset.price,
+          +num.textContent
+        );
+        num.textContent = 1;
       };
     });
   }
 
-  // ===== 3. LÓGICA DO CARRINHO =====
-  function adicionarAoCarrinho(item) {
-    const index = carrinho.findIndex(c => c.id === item.id);
-    if (index > -1) {
-      carrinho[index].qtd += item.qtd;
-    } else {
-      carrinho.push(item);
-    }
-    atualizarBadge();
-    alert(`✅ ${item.nome} adicionado ao carrinho!`);
+  /* ===== CARRINHO ===== */
+  function addToCart(id, nome, preco, qtd) {
+    const item = carrinho.find(i => i.id === id);
+    item ? item.qtd += qtd : carrinho.push({ id, nome, preco, qtd });
+    renderCart();
   }
 
-  function atualizarBadge() {
-    const count = carrinho.reduce((acc, curr) => acc + curr.qtd, 0);
-    document.getElementById('cart-count').innerText = count;
+  function removeFromCart(id) {
+    carrinho = carrinho.filter(i => i.id !== id);
+    renderCart();
   }
 
-  function renderCarrinho() {
+  function renderCart() {
     const lista = document.getElementById('lista-pedido');
-    const totalMsg = document.getElementById('valor-total');
-    lista.innerHTML = "";
-    let totalGeral = 0;
+    const totalEl = document.getElementById('valor-total');
+    const countEl = document.getElementById('cart-count');
 
-    carrinho.forEach((item, index) => {
-      const subtotal = item.preco * item.qtd;
-      totalGeral += subtotal;
+    lista.innerHTML = "";
+    let total = 0;
+    let count = 0;
+
+    carrinho.forEach(item => {
+      total += item.preco * item.qtd;
+      count += item.qtd;
+
       lista.innerHTML += `
-        <div class="item-linha">
-          <span>${item.qtd}x ${item.nome}</span>
-          <span>R$ ${subtotal.toFixed(2)} <i class="fa-solid fa-trash" style="color:#e74c3c; cursor:pointer" onclick="removerItem(${index})"></i></span>
+        <div class="pedido-item">
+          <div class="info">
+            <strong>${item.qtd}x ${item.nome}</strong>
+            <span>R$ ${(item.preco * item.qtd).toFixed(2)}</span>
+          </div>
+          <button class="btn-remove" data-id="${item.id}">&times;</button>
         </div>
       `;
     });
 
-    totalMsg.innerText = `R$ ${totalGeral.toFixed(2)}`;
+    totalEl.textContent = `R$ ${total.toFixed(2)}`;
+    countEl.textContent = count;
+
+    document.querySelectorAll('.btn-remove').forEach(btn =>
+      btn.onclick = () => removeFromCart(btn.dataset.id)
+    );
   }
 
-  window.removerItem = (index) => {
-    carrinho.splice(index, 1);
-    renderCarrinho();
-    atualizarBadge();
-    if(carrinho.length === 0) document.getElementById('close-modal').click();
-  };
-
-  // ===== 4. MODAL E FINALIZAÇÃO =====
+  /* ===== MODAL ===== */
   const modal = document.getElementById('modal-checkout');
-  
   document.getElementById('btn-abrir-carrinho').onclick = () => {
-    if (carrinho.length === 0) return alert("Seu carrinho está vazio!");
-    renderCarrinho();
-    modal.style.display = 'flex';
+    modal.style.display = "flex";
+    document.body.classList.add("modal-open");
   };
 
-  document.getElementById('close-modal').onclick = () => modal.style.display = 'none';
-
-  document.getElementById('cust-entrega').onchange = function() {
-    document.getElementById('group-endereco').style.display = this.value === "Entrega" ? "block" : "none";
+  document.getElementById('close-modal').onclick = () => {
+    modal.style.display = "none";
+    document.body.classList.remove("modal-open");
   };
 
-  document.getElementById('checkout-form').onsubmit = function(e) {
+  document.getElementById('cust-entrega').onchange = e => {
+    const group = document.getElementById('group-endereco');
+    const input = document.getElementById('cust-endereco');
+    group.style.display = e.target.value === "Entrega" ? "block" : "none";
+    e.target.value === "Entrega"
+      ? input.setAttribute("required", true)
+      : input.removeAttribute("required");
+  };
+
+  /* ===== WHATSAPP ===== */
+  document.getElementById('checkout-form').onsubmit = e => {
     e.preventDefault();
-    
-    const nome = document.getElementById('cust-nome').value;
-    const entrega = document.getElementById('cust-entrega').value;
-    const endereco = document.getElementById('cust-endereco').value;
-    const pagamento = document.getElementById('cust-pagamento').value;
+    if (!carrinho.length) return alert("Carrinho vazio!");
 
-    let mensagem = `*PEDIDO - ZÉLIA BORDADOS*\n\n`;
-    mensagem += `*Cliente:* ${nome}\n`;
-    mensagem += `*Entrega:* ${entrega}\n`;
-    if(entrega === "Entrega") mensagem += `*Endereço:* ${endereco}\n`;
-    mensagem += `*Pagamento:* ${pagamento}\n\n`;
-    mensagem += `*ITENS:*\n`;
+    let msg = "*PEDIDO – ZÉLIA BORDADOS*\n\n";
+    carrinho.forEach(i =>
+      msg += `• ${i.qtd}x ${i.nome} (R$ ${(i.preco * i.qtd).toFixed(2)})\n`
+    );
 
-    let totalGeral = 0;
-    carrinho.forEach(item => {
-      mensagem += `• ${item.qtd}x ${item.nome} (R$ ${(item.preco * item.qtd).toFixed(2)})\n`;
-      totalGeral += item.preco * item.qtd;
-    });
-
-    mensagem += `\n*TOTAL: R$ ${totalGeral.toFixed(2)}*`;
-
-    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(mensagem)}`;
-    window.open(url, '_blank');
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+    window.open(url, "_blank");
   };
 
-  // Inicialização
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener("DOMContentLoaded", () => {
     initLightbox();
     initQuantityControls();
-    
-    // Smooth scroll para links existentes
-    document.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const target = document.querySelector(link.getAttribute('href'));
-        if (target) target.scrollIntoView({ behavior: 'smooth' });
-      });
-    });
   });
 })();
